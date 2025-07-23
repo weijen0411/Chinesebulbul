@@ -267,6 +267,12 @@ body,
   }
 }
 
+@media (max-height: 576px) {
+  .banner-text h2 {
+  font-size: 2.35rem;
+}
+}
+
 .mobile-header {
   display: flex;
   align-items: center;
