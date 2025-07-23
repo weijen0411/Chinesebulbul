@@ -195,7 +195,7 @@ body,
 }
 
 /* 響應式排版 */
-@media (max-width: 1450px){
+@media (max-width: 1400px){
   .banner {
     min-height: 35vh;
     padding: 15px;
