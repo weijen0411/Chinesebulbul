@@ -40,13 +40,18 @@ body,
   display: inline-block;
 }
 
+.nav-link.selected {
+  color: #AA6666;
+  font-weight: bold;
+}
+
 .nav-link.selected::after {
   content: '';
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 60%;
+  width: 95%;
   height: 3px;
   background-color: #AA6666;
   border-radius: 2px;
@@ -65,17 +70,6 @@ body,
   transition: width 0.3s ease;
   opacity: 0.7;
   pointer-events: none; 
-}
-
-.nav-link:hover::after {
-  width: 60%;
-  opacity: 1;
-}
-
-.nav-link.selected {
-  width: 60%;
-  color: #AA6666;
-  font-weight: bold;
 }
 
 .nav-link:hover:not(.selected) {
@@ -244,9 +238,6 @@ body,
   }
   .nav-link {
     padding: 0.5rem 0;
-  }
-  .nav-link.selected::after {
-    width: 33% !important;  
   }
 }
 
