@@ -240,7 +240,6 @@ body,
   }
   .sidebar {
     max-width: 100%;
-    max-height: 30vh;
     min-height: auto;
   }
   .nav-link {
