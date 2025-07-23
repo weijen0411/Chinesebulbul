@@ -1,0 +1,282 @@
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* sidebar */
+.sidebar {
+  width: 100%;
+  max-width: 365px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+.sidebar .sidebar-title{
+  text-align: center;
+  padding: 2rem 1rem 2.5rem 1.75rem;
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+.nav-item {
+  text-align: center;
+  font-size: 1.05rem;
+}
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.75rem 0;
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link.selected::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background-color: #AA6666;
+  border-radius: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: #cc8b8b;  
+  border-radius: 2px;
+  transition: width 0.3s ease;
+  opacity: 0.7;
+  pointer-events: none; 
+}
+
+.nav-link:hover::after {
+  width: 60%;
+  opacity: 1;
+}
+
+.nav-link.selected {
+  width: 60%;
+  color: #AA6666;
+  font-weight: bold;
+}
+
+.nav-link:hover:not(.selected) {
+  color: #cc8b8b;
+  font-weight: bold;
+}
+
+.col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.banner,
+.feature {
+  margin: 0 ;
+  padding: 0 ;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-basis: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  position: relative;      
+  background-image: url('src/assets/bulbul.jpg'); 
+  background-size: cover;
+  background-position: 80% 70%;
+  background-repeat: no-repeat;
+  flex-grow: 7;
+  display: flex;           
+  align-items: flex-end;   
+  justify-content: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.banner-text {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  max-width: 40%;
+  text-align: right;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.banner-text h2 {
+  margin: 0 0 0.3em 0;
+  font-size: 3.25rem;
+  font-weight: bold;
+}
+
+.banner-text p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.feature {
+  flex-grow: 3;
+  background-color: #DCCCBC;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;         
+  justify-content: flex-start;
+  gap: 1rem;
+  flex-direction: row;      
+  align-items: flex-start;
+}
+
+/* Feature */
+.feature-box {
+  background-color: #DCCCBC;
+  display: center;
+  align-items: flex-start;
+  padding: 2rem 1.25rem 1rem 5.25rem !important;
+  box-sizing: border-box;
+  height: auto;          
+  width: calc(30% - 0.27rem); 
+  min-width: 260px;      
+  gap: 1rem;
+}
+
+.feature-title {
+  position: relative; 
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+  white-space: nowrap;
+  margin-top:0.3rem;
+  margin-right: 1.5rem;
+  align-self: flex-start;
+}
+
+.feature-title::after {
+  content: '';
+  position: absolute;
+  width: 1.7rem;           
+  height: 1.7rem;
+  border: 0.57rem solid rgba(170, 102, 102, 0.6); 
+  border-radius: 50%;
+  background-color: transparent; 
+  bottom: -15%;
+  right: -10%;
+  box-sizing: border-box;  
+}
+
+.feature-content {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #000;
+  line-height: 1.5;
+  max-width: 80%; 
+  word-break: break-word;
+}
+
+/* 響應式排版 */
+@media (max-width: 1450px){
+  .banner {
+    min-height: 35vh;
+    padding: 15px;
+    background-size: 150%;
+    background-position: 10% 60%;
+  }
+  .banner-text {
+    max-width: 70%;
+    bottom: 15px;
+    right: 5%;
+  }
+  .feature {
+    flex-grow: 6.5;
+    flex-direction: column; 
+    padding: 1rem 2rem 1rem 1rem;
+    gap: 0.75rem;
+  }
+  .feature-box {
+    width: 100%;           
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+  }
+  .feature-title {
+    margin-right: 1rem;
+  }
+  .feature-content {
+    max-width: 70%;
+  }
+}
+@media (max-width: 992px) {
+  .mobile-header h5 {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 1rem;
+    font-weight: bold;
+  }
+  .sidebar {
+    max-width: 100%;
+    max-height: 30vh;
+    min-height: auto;
+  }
+  .nav-link {
+    padding: 0.5rem 0;
+  }
+  .nav-link.selected::after {
+    width: 33% !important;  
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-header {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner {
+    background-size: 175%;
+    min-height: 35vh; 
+    padding: 15px;
+  }
+  .feature-box {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+
